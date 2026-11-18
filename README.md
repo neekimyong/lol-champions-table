@@ -46,7 +46,7 @@ python -m venv .venv
 - 8 sütun: Şampiyon (ikonlu), Cinsiyet, Pozisyon, Tür, Menzil, Kaynak, Bölge, Yıl.
 - Portreler: kutunun tam ortasında ve kutunun yaklaşık %74'ü büyüklükte (kutu 82 px, portre 60 px).
 - LoLdle ekranından alınan görünüm: koyu zemin, sütun başına renkli yuvarlak kutular, beyaz kalın yazı.
-- Tahmin/renk durumu (Doğru/Kısmı/Yanlış) YOK — bunlar oyun sitesinde.
+- Tahmin/renk durumu (Doğru/Kısmi/Yanlış) YOK — bunlar oyun sitesinde.
 - Çoklu değerler tile içinde görünür; filtreler kombinasyon bazlı (tam eşleşme).
 - Türkçe / İngilizce arayüz (sağ üstteki dil butonu).
 - 4K (3840x2160) ölçekleme.
