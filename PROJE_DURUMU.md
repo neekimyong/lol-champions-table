@@ -109,6 +109,6 @@ H:\LoL Kahramanları\
 - [x] `README.md` + `build_exe.bat` yazıldı.
 - [x] Güncelleme: açılışta LoLdle JS + Data Dragon; ikon indirme; yedekleme.
 - [ ] Kullanıcının exe'yi denetleme onayı.
-- [ ] **GitHub:** Hermes'te GitHub kimliği YOK (connector listesinde yok, `cmdkey`/`.gitconfig`/`~/.ssh` boş, `gh` yüklü değil). Kullanıcı bilgilerin Hermes'te olduğunu söylüyor → doğrulandı, yok. Yükleme için `gh` kurulumu ve `gh auth login` bekleniyor.
+- [x] **GitHub:** `gh` CLI (winget) kuruldu; device-flow ile giriş yapıldı (kullanıcı `neekimyong`, kapsam repo/read:org/gist; parola hiç görünmedi). Depo: **https://github.com/neekimyong/lol-champions-table** (PUBLIC, konular: lol, league-of-legends, loldle, champions, pyside6). 192 dosya + 173 ikon yüklendi; `v1.0.0` release'i exe'i taşıyor. exe SHA-256: `e211f65105bc3a087502e61400af24e4d02c033fdc8d61a5678f5050e68f51ca` (README'de).
 - Not (ölçüm tuzakları): offscreen platform gerçek font/DPI'yı vermez; DPI-aware olmayan captur ölçek yanılsaması yapar — exe doğrulaması fiziksel çözünürlükle OCR + erişilebilirlik (AX) ağacı ile yapıldı.
 - `LOKL_DEBUG=1` ortam değişkeniyle `cache\debug.json` (pencere/kolon/font/DPI ölçüleri) yazılır; normal kullanımda etkisiz.

@@ -6,8 +6,15 @@ sıralama ve özellik değeri filtresiyle.
 
 ## Çalıştırma
 
-**Exe (önerilen):** `dist\LoLKahramanlari.exe` dosyasına çift tıkla. Tek dosyadır, kurulum
-gerekmez. İlk açılışta yanında `data\` ve `assets\` klasörleri oluşur (güncelleme için gerekli).
+**Exe (önerilen):** [v1.0.0 sürümünden indir](https://github.com/neekimyong/lol-champions-table/releases/latest)
+(`LoLKahramanlari.exe`, ~52 MB). Tek dosyadır, kurulum gerekmez. İlk açılışta yanında
+`data\` ve `assets\` klasörleri oluşur (güncelleme için gerekli).
+
+Doğrulama:
+```bat
+certutil -hashfile LoLKahramanlari.exe SHA256
+:: e211f65105bc3a087502e61400af24e4d02c033fdc8d61a5678f5050e68f51ca
+```
 
 **Kaynaktan:**
 ```bat
@@ -25,7 +32,7 @@ python -m venv .venv
    "İnsan" yalnız insanları, "İnsan, Buzdoğan" onları verir. Aynısı Pozisyon/Menzil/Bölge için.
    Tüm açılır kutular **Türkçe harf sırasındadır** (çoklu değerler de kendi içinde sıralanır).
 3. Birden çok sütundan seçim yapabilirsin; seçimler **aynı anda** uygulanır (hepsi AND).
-   Örn: Cinsiyet = Kadın + Yıl = 2011 → 8 şampiyon.
+   Örneğin: Cinsiyet = Kadın + Yıl = 2011 → 8 şampiyon.
 4. Sağ üstte "X / 173 eşleşiyor" sayısını görürsün. **Temizle** = tüm filtreleri sıfırlar.
 5. **Arama:** "Şampiyon adı yaz…" kutusuna isim yaz (Ahri, Yasuo…).
 6. **Sıralama:** bir sütun başlığına tıkla. Bir kez = artan, iki kez = azalan.
@@ -38,7 +45,7 @@ python -m venv .venv
 
 - 8 sütun: Şampiyon (ikonlu), Cinsiyet, Pozisyon, Tür, Menzil, Kaynak, Bölge, Yıl.
 - LoLdle ekranından alınan görünüm: koyu zemin, sütun başına renkli yuvarlak kutular, beyaz kalın yazı.
-- Tahmin/renk durumu (Doğru/Kısmı/Yanlış) YOK — bunlar oyun sitesinde.
+- Tahmin/renk durumu (Doğru/Kısmi/Yanlış) YOK — bunlar oyun sitesinde.
 - Çoklu değerler tile içinde görünür; filtreler kombinasyon bazlı (tam eşleşme).
 - Türkçe / İngilizce arayüz (sağ üstteki dil butonu).
 - 4K (3840x2160) ölçekleme.
@@ -79,7 +86,15 @@ that lists all 173 League of Legends champions in a LoLdle-style coloured tile t
 (Champion / Gender / Position / Species / Range / Resource / Region / Year) and lets you
 narrow the list by any combination of those traits. Turkish and English UI (button at the
 top right). Data comes from LoLdle's own JS bundle and Riot's Data Dragon; it refreshes
-automatically at startup. Run `dist\LoLKahramanlari.exe` — no install needed.
+automatically at startup. Download the single-file exe from the
+[latest release](https://github.com/neekimyong/lol-champions-table/releases/latest)
+and run it — no install needed.
+
+Verify the download:
+```bat
+certutil -hashfile LoLKahramanlari.exe SHA256
+:: e211f65105bc3a087502e61400af24e4d02c033fdc8d61a5678f5050e68f51ca
+```
 
 Not affiliated with or endorsed by Riot Games. League of Legends is a trademark of Riot
 Games, Inc. Champion data and icons belong to their respective owners.
