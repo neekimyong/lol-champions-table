@@ -1,0 +1,6 @@
+# LoL Kahramanları — gereksinimler
+# Kaynaktan çalıştırmak için:
+PySide6==6.12.0
+
+# exe derlemek için (build_exe.bat bunu kullanır):
+PyInstaller==6.22.3

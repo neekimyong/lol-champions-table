@@ -1,0 +1,26 @@
+{
+ "gender": {
+  "mode": "exact"
+ },
+ "resource": {
+  "mode": "exact"
+ },
+ "positions": {
+  "mode": "set"
+ },
+ "species": {
+  "mode": "set"
+ },
+ "range_type": {
+  "mode": "set"
+ },
+ "regions": {
+  "mode": "set"
+ },
+ "year": {
+  "mode": "year",
+  "within": 1,
+  "within_color": "orange",
+  "direction": true
+ }
+}

@@ -1,0 +1,13 @@
+# Derleme / sanal ortam
+.venv/
+build/
+dist/
+__pycache__/
+*.pyc
+
+# İndirilen ham veri ve yedekler
+cache/
+
+# IDE
+.vscode/
+.idea/
