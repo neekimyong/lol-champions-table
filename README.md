@@ -6,14 +6,14 @@ sıralama ve özellik değeri filtresiyle.
 
 ## Çalıştırma
 
-**Exe (önerilen):** [v1.0.1 sürümünden indir](https://github.com/neekimyong/lol-champions-table/releases/latest)
+**Exe (önerilen):** [v1.0.2 sürümünden indir](https://github.com/neekimyong/lol-champions-table/releases/latest)
 (`LoLKahramanlari.exe`, ~52 MB). Tek dosyadır, kurulum gerekmez. İlk açılışta yanında
 `data\` ve `assets\` klasörleri oluşur (güncelleme için gerekli).
 
 Doğrulama:
 ```bat
 certutil -hashfile LoLKahramanlari.exe SHA256
-:: cf6701cc77ee39df5bab000f999dd12f2a3519774801f721592d2b699f112527
+:: 96cf8ca159480319f466ed2020220738c312e033b245de47a5d57ed203fc49c2
 ```
 
 **Kaynaktan:**
@@ -44,8 +44,9 @@ python -m venv .venv
 ## Özellikler
 
 - 8 sütun: Şampiyon (ikonlu), Cinsiyet, Pozisyon, Tür, Menzil, Kaynak, Bölge, Yıl.
+- Portreler: kutunun tam ortasında ve kutunun yaklaşık %74'ü büyüklükte (kutu 82 px, portre 60 px).
 - LoLdle ekranından alınan görünüm: koyu zemin, sütun başına renkli yuvarlak kutular, beyaz kalın yazı.
-- Tahmin/renk durumu (Doğru/Kısmi/Yanlış) YOK — bunlar oyun sitesinde.
+- Tahmin/renk durumu (Doğru/Kısmı/Yanlış) YOK — bunlar oyun sitesinde.
 - Çoklu değerler tile içinde görünür; filtreler kombinasyon bazlı (tam eşleşme).
 - Türkçe / İngilizce arayüz (sağ üstteki dil butonu).
 - 4K (3840x2160) ölçekleme.
@@ -93,7 +94,7 @@ and run it — no install needed.
 Verify the download:
 ```bat
 certutil -hashfile LoLKahramanlari.exe SHA256
-:: cf6701cc77ee39df5bab000f999dd12f2a3519774801f721592d2b699f112527
+:: 96cf8ca159480319f466ed2020220738c312e033b245de47a5d57ed203fc49c2
 ```
 
 Not affiliated with or endorsed by Riot Games. League of Legends is a trademark of Riot

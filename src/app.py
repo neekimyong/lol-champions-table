@@ -2,7 +2,7 @@
 
 import os
 
-from PySide6.QtCore import (QAbstractTableModel, QEvent, QMarginsF, QRectF, Qt, QThread, Signal, QModelIndex)
+from PySide6.QtCore import (QAbstractTableModel, QEvent, QMarginsF, QRect, QRectF, QSize, Qt, QThread, Signal, QModelIndex)
 from PySide6.QtGui import QColor, QIcon, QPainter, QPainterPath, QPixmap
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QFrame, QHBoxLayout,
                                QHeaderView, QLabel, QLineEdit, QMainWindow, QPushButton,
@@ -14,8 +14,8 @@ from theme import STYLESHEET, COLUMN_COLORS, PANEL, MUTED
 
 GAP = 5
 RADIUS = 10
-ROW_H = 84
-ICON = 46
+ROW_H = 92
+ICON = 60
 CHAMPION_W = 240
 
 
@@ -95,6 +95,10 @@ class TileDelegate(QStyledItemDelegate):
         super().__init__(parent)
         self.columns = columns
 
+    def sizeHint(self, option, index):
+        """Satır yüksekliğini ROW_H'a sabitle (hücre ile satır arası kaymayı önler)."""
+        return QSize(40, ROW_H)
+
     def paint(self, painter, option, index):
         painter.save()
         painter.setRenderHint(QPainter.Antialiasing)
@@ -118,9 +122,10 @@ class TileDelegate(QStyledItemDelegate):
             icon = index.data(Qt.DecorationRole)
             if icon is not None and not icon.isNull():
                 pm = _rounded(icon.pixmap(ICON, ICON), 12)
-                y = int(rect.center().y() - pm.height() / 2)
+                # NOT: pm.height() aygıt pikseli, rect ise mantıksal piksel -> karışıklığı önle
+                y = int(rect.center().y() - ICON / 2)
                 painter.drawPixmap(int(rect.left()) + 16, y, pm)
-                trect = rect.adjusted(16 + pm.width() + 18, 0, -10, 0)
+                trect = rect.adjusted(16 + ICON + 18, 0, -10, 0)
                 painter.drawText(trect, Qt.AlignVCenter | Qt.AlignLeft | Qt.TextWordWrap, text)
             else:
                 painter.drawText(rect.adjusted(12, 0, -8, 0), Qt.AlignVCenter | Qt.AlignLeft, text)
