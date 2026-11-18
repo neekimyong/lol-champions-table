@@ -1,7 +1,16 @@
 # PROJE DURUMU — LoL Kahramanları Tablosu
 
 > Bu dosya kalıcı durum kaydıdır. Yeni bir sohbet başlatıldığında bu dosyayı oku ve işe buradan devam et.
-> Son güncelleme: 18 Kasım 2026 (portre ekleme düzeltmesi + Türkçe düzeltmeleri)
+> Son güncelleme: 18 Kasım 2026 (portre hizalama kök hatası + boyut + exe güncelleme testi)
+
+## 0. Hızlı devam (resume)
+- **Exe:** `H:\LoL Kahramanları\dist\LoLKahramanlari.exe` — v1.0.2, 52.437.109 bayt, SHA-256 `96cf8ca159480319f466ed2020220738c312e033b245de47a5d57ed203fc49c2`
+- **Release:** https://github.com/neekimyong/lol-champions-table/releases/tag/v1.0.2 (Latest)
+- **Depo:** `main` → https://github.com/neekimyong/lol-champions-table (public). `gh` PATH'te değil: `"C:\Program Files\GitHub CLI\gh.exe"`
+- **Derleme:** proje klasöründe `build_exe.bat` (önce `dist\data` + `dist\assets` silinir; silinmezse eski veri okunur)
+- **Doğrulama:** exe'yi çalıştır → `dist\data\meta.json` yenilenir (patch/sayı/tarih) ve `dist\assets\champions` 173 ikon; sonra `PrintWindow` ile piksel ölç (tile 142 px, satır 161 px, portre 105x105 px kare). Ekran görüntüsünü Tesseract/vision ile oku.
+- **Sabitler (`src/app.py`):** `ROW_H=92`, `ICON=60`, `GAP=5`, `RADIUS=10`, `CHAMPION_W=240`
+- **Kök hata (düzeltildi):** delegate'de `rect` mantıksal piksel, `QPixmap.height()` aygıt pikselidir — karıştırılmasın (`y = rect.center().y() - ICON/2`).
 
 ## 1. Sabitler
 - **Klasör:** `H:\LoL Kahramanları` (kullanıcının verdiği tek klasör; dışına dosya yazılmamalı)
