@@ -1,7 +1,7 @@
 # PROJE DURUMU — LoL Kahramanları Tablosu
 
 > Bu dosya kalıcı durum kaydıdır. Yeni bir sohbet başlatıldığında bu dosyayı oku ve işe buradan devam et.
-> Son güncelleme: 18 Kasım 2026 (renk + hover + GitHub aşaması)
+> Son güncelleme: 18 Kasım 2026 (portre ekleme düzeltmesi + Türkçe düzeltmeleri)
 
 ## 1. Sabitler
 - **Klasör:** `H:\LoL Kahramanları` (kullanıcının verdiği tek klasör; dışına dosya yazılmamalı)
@@ -76,7 +76,8 @@ H:\LoL Kahramanları\
 - [x] `src/rules.py`, `data_model.py`, `theme.py`, `updater.py`, `app.py`, `main.py` yazıldı.
 - [x] `tests/test_ui.py` (offscreen) çalıştı; filtre hatası (string/sayı) yakalanıp düzeltildi.
 - [x] `cache/ui_test.png` (1720x1000): koyu tema, 938 renk, panel (10,20,40), tablo (12,25,48).
-- [x] Yeniden tasarım: LoLdle tarzı renkli tile'lar, `GAP=5`, `RADIUS=10`, `ROW_H=72`, `ICON=52`, `CHAMPION_W=240`.
+- [x] Yeniden tasarım: LoLdle tarzı renkli tile'lar, `GAP=5`, `RADIUS=10`, `ROW_H=84`, `ICON=46`, `CHAMPION_W=240`.
+- [x] **Portre ekleme düzeltmesi** (kullanıcı: "portre kutunun kenarına/hatta dışına taşıyor; tamamen içine alıp ortalamak istiyorum"): eski `ROW_H=72`/`ICON=52` ikonu dikeyde kutuya 5 mantıksal px hatta daha az bırakıyordu. `ROW_H=84`/`ICON=46` + soldan 16px pay ile üst/alt boşluk ≈14 mantıksal px, ikon tile'ın tam içinde. Görsel doğrulama (vision): "portre kutunun içinde, üstten ve alttan boşluk var".
 - [x] Kontroller küçültüldü (QComboBox 3px 6px / min-width 84, QPushButton 4px 10px, QLineEdit 5px 10px).
 - [x] Çoklu değerler tile içinde görünüyor (Amumu: "Yaşayan Ölü, Yordle"; Anivia: "Ruh, Tanrı").
 - [x] Hover popup (`HoverTableView` + viewport event filter) eklendi.
@@ -109,6 +110,7 @@ H:\LoL Kahramanları\
 - [x] `README.md` + `build_exe.bat` yazıldı.
 - [x] Güncelleme: açılışta LoLdle JS + Data Dragon; ikon indirme; yedekleme.
 - [ ] Kullanıcının exe'yi denetleme onayı.
-- [x] **GitHub:** `gh` CLI (winget) kuruldu; device-flow ile giriş yapıldı (kullanıcı `neekimyong`, kapsam repo/read:org/gist; parola hiç görünmedi). Depo: **https://github.com/neekimyong/lol-champions-table** (PUBLIC, konular: lol, league-of-legends, loldle, champions, pyside6). 192 dosya + 173 ikon yüklendi; `v1.0.0` release'i exe'i taşıyor. exe SHA-256: `e211f65105bc3a087502e61400af24e4d02c033fdc8d61a5678f5050e68f51ca` (README'de).
+- [x] **GitHub:** `gh` CLI (winget) kuruldu; device-flow ile giriş yapıldı (kullanıcı `neekimyong`, kapsam repo/read:org/gist; parola hiç görünmedi). Depo: **https://github.com/neekimyong/lol-champions-table** (PUBLIC, konular: lol, league-of-legends, loldle, champions, pyside6). 192 dosya + 173 ikon yüklendi. **En güncel sürüm: `v1.0.1`** — https://github.com/neekimyong/lol-champions-table/releases/tag/v1.0.1 ; exe SHA-256: `cf6701cc77ee39df5bab000f999dd12f2a3519774801f721592d2b699f112527` (README'de). `v1.0.0` (eski, portresi kutuya taşan exe) hâlâ duruyor; silinmesi istenirse `gh release delete v1.0.0`.
+- [x] **GitHub Türkçe düzeltmeleri** (kullanıcı: "Github'da kötü bir Türkçe kullanmışsın"): depo açıklaması diakritiksiz Türkçe yazılmıştı (`icin`/`sampiyon`/`arayuz`) → düzeltildi ve TR + EN yapıldı; commit mesajlarındaki `baglantisi`/`dogrulama`/`guncellendi` hataları için geçmiş sıkıştırıldı (`git reset --soft` + `--force-with-lease`); README'de `Örn:` → `Örneğin:`, `Kısmı` → `Kısmi`.
 - Not (ölçüm tuzakları): offscreen platform gerçek font/DPI'yı vermez; DPI-aware olmayan captur ölçek yanılsaması yapar — exe doğrulaması fiziksel çözünürlükle OCR + erişilebilirlik (AX) ağacı ile yapıldı.
 - `LOKL_DEBUG=1` ortam değişkeniyle `cache\debug.json` (pencere/kolon/font/DPI ölçüleri) yazılır; normal kullanımda etkisiz.

@@ -6,14 +6,14 @@ sıralama ve özellik değeri filtresiyle.
 
 ## Çalıştırma
 
-**Exe (önerilen):** [v1.0.0 sürümünden indir](https://github.com/neekimyong/lol-champions-table/releases/latest)
+**Exe (önerilen):** [v1.0.1 sürümünden indir](https://github.com/neekimyong/lol-champions-table/releases/latest)
 (`LoLKahramanlari.exe`, ~52 MB). Tek dosyadır, kurulum gerekmez. İlk açılışta yanında
 `data\` ve `assets\` klasörleri oluşur (güncelleme için gerekli).
 
 Doğrulama:
 ```bat
 certutil -hashfile LoLKahramanlari.exe SHA256
-:: e211f65105bc3a087502e61400af24e4d02c033fdc8d61a5678f5050e68f51ca
+:: cf6701cc77ee39df5bab000f999dd12f2a3519774801f721592d2b699f112527
 ```
 
 **Kaynaktan:**
@@ -56,7 +56,7 @@ python -m venv .venv
 - **Birincil veri:** LoLdle'nin kendi JS'ine gömülü şampiyon dizisi (173 kayıt).
 - **İkon/isim:** Riot Data Dragon (`ddragon.leagueoflegends.com`).
 - Yeni şampiyon çıkınca otomatik eklenir; patch değişince ikonlar yenilenir.
-- `data\overrides.json` dosyasına elle düzeltme yazarsan güncelleme bunu **asla ezmez**. Örn:
+- `data\overrides.json` dosyasına elle düzeltme yazarsan güncelleme bunu **asla ezmez**. Örneğin:
 ```json
 { "champions": { "Ahri": { "species": ["Vastayan"] } } }
 ```
@@ -93,7 +93,7 @@ and run it — no install needed.
 Verify the download:
 ```bat
 certutil -hashfile LoLKahramanlari.exe SHA256
-:: e211f65105bc3a087502e61400af24e4d02c033fdc8d61a5678f5050e68f51ca
+:: cf6701cc77ee39df5bab000f999dd12f2a3519774801f721592d2b699f112527
 ```
 
 Not affiliated with or endorsed by Riot Games. League of Legends is a trademark of Riot
